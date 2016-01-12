@@ -5,6 +5,10 @@ var ProfileTransformer = Mystique.Transformer.extend({
   mapOut: function(profile) {
     return {
       id: profile.id,
+      email: profile.email,
+      roles: profile.roles,
+      firstName: profile.firstName,
+      lastName: profile.lastName,
     };
   },
 
