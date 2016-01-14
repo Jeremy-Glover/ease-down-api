@@ -15,6 +15,7 @@ var fields = {
   location: { type: String },
   description: { type: String },
   active: { type: Boolean },
+  featured: { type: Boolean },
   region: { type: String },
 };
 
