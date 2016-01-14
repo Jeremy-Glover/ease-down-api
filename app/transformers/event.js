@@ -8,11 +8,13 @@ var EventTransformer = Mystique.Transformer.extend({
       name: event.name,
       email: event.email,
       phone: event.phone,
-      dates: event.dates,
+      startDate: event.startDate,
+      endDate: event.endDate,
       url: event.url,
       location: event.location,
       description: event.description,
       active: event.active,
+      region: event.region,
     };
   },
 
@@ -21,11 +23,13 @@ var EventTransformer = Mystique.Transformer.extend({
       name: req.getJson('event.name'),
       email: req.getJson('event.email'),
       phone: req.getJson('event.phone'),
-      dates: req.getJson('event.dates'),
+      startDate: req.getJson('event.startDate'),
+      endDate: req.getJson('event.endDate'),
       url: req.getJson('event.url'),
       location: req.getJson('event.location'),
       description: req.getJson('event.description'),
       active: req.getJson('event.active'),
+      region: req.getJson('event.region'),
     };
   },
 });

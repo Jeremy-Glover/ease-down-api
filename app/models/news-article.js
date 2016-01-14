@@ -2,9 +2,9 @@ var mongoose = require('mongoose');
 var moment = require('moment');
 
 var NewsArticleSchema = mongoose.Schema({
-  title: {type: String, required: true},
-  body: {type: String, required: true},
-  publishDate: {type: Date, default: Date.now},
+  title: { type: String, required: true },
+  body: { type: String, required: true },
+  publishDate: { type: Date, default: Date.now },
 });
 
 NewsArticleSchema.virtual('short').get(function() {
