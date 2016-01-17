@@ -5,7 +5,7 @@ var api = {};
 
 // ALL
 api.events = function(req) {
-  return req.store.recordCollection('Event', { queryBy: ['region', 'active', 'featured'] });
+  return req.store.recordCollection('Event');
 };
 
 // GET

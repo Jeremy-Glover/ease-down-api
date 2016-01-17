@@ -17,8 +17,11 @@ var fields = {
   active: { type: Boolean },
   featured: { type: Boolean },
   region: { type: String },
+  imageUrl: { type: String },
 };
 
 var EventSchema = new Schema(fields);
+
+
 
 module.exports = mongoose.model('Event', EventSchema);

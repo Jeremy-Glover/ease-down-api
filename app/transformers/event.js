@@ -16,6 +16,7 @@ var EventTransformer = Mystique.Transformer.extend({
       active: event.active,
       featured: event.featured,
       region: event.region,
+      imageUrl: event.imageUrl,
     };
   },
 
@@ -32,6 +33,7 @@ var EventTransformer = Mystique.Transformer.extend({
       active: req.getJson('event.active'),
       featured: req.getJson('event.featured'),
       region: req.getJson('event.region'),
+      imageUrl: req.getJson('event.imageUrl'),
     };
   },
 });
