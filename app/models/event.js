@@ -18,6 +18,7 @@ var fields = {
   featured: { type: Boolean },
   region: { type: String },
   imageUrl: { type: String },
+  category: { type: String },
 };
 
 var EventSchema = new Schema(fields);
