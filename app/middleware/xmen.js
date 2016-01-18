@@ -93,6 +93,12 @@ module.exports = function(req, res, next) {
             return res.status(500).send(err);
           }
 
+          if (!model) {
+            return res.status(404).send({
+              message: `No ${modelName} found with id: ${id}`,
+            });
+          }
+
           req.store.renderItem(model, modelName, options);
         });
     },
@@ -130,16 +136,23 @@ module.exports = function(req, res, next) {
         });
     },
 
-    destroyRecord(modelName, id) {
+    destroyRecord(modelName, id, options) {
+      options = options || {};
+      var beforeDelete = options.beforeDelete || defaultBeforeSave;
+      var afterDelete = options.afterDelete || () => {};
+
       var Model = Mongoose.model(modelName);
 
-      Model.remove({_id: id})
+      Model.findById({_id: id})
         .exec((err, model) => {
           if (err) {
             return res.status(500).send(err);
           }
 
-          res.status(204).send();
+          model.remove(() => {
+            res.status(204).send();
+            afterDelete();
+          });
         });
     },
   };
