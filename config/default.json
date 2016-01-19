@@ -15,6 +15,14 @@
       {
         "clientId": "development",
         "origin": "http://localhost:4200"
+      },
+      {
+        "clientId": "production",
+        "origin": "http://ease-down.surge.sh"
+      },
+      {
+        "clientId": "production",
+        "origin": "https://ease-down.surge.sh"
       }
     ]
   }
